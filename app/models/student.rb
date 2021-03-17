@@ -22,6 +22,6 @@ class Student < ActiveRecord::Base
   #   end
   # end
 
-  scope :search(query), -> { if query.present? where("NAME like ?", "%#{query}%") else self.all end}
+  scope :search, -> (query){ where("NAME like ?", "%#{query}%")}
   
 end
